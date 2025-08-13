@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IoT-Powered E-Waste Management</title>
+  <meta name="description" content="A modern IoT-based e-waste management system using smart bins, sensors, and real-time tracking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#2563eb;
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --max-width:1100px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:Inter, system-ui, Arial, sans-serif;
+      margin:0;
+      color:#111827;
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    header{
+      background: linear-gradient(60deg,#eff6ff,#ffffff);
+      border-bottom:1px solid #e6eef5;
+      padding:14px 8px;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:20px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:64px;
+      height:64px;
+      border-radius:10px;
+      background:var(--accent);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:800;
+      font-size:22px;
+      letter-spacing:0.6px;
+    }
+    nav{
+      margin-left:auto;
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    nav a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:700;
+      padding:8px 12px;
+      border-radius:8px;
+      background:transparent;
+    }
+    nav a.cta{
+      color:#fff;
+      background:var(--accent);
+    }
+    nav a:hover{opacity:0.9}
+    .hero{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      padding:28px 0;
+      flex-wrap:wrap;
+    }
+    .hero h1{margin:0;font-size:28px;color:#1e3a8a;}
+    .hero p{margin:8px 0 0;color:var(--muted);line-height:1.45}
+    .card{
+      background:var(--card);
+      box-shadow:0 6px 18px rgba(15,23,42,0.05);
+      padding:18px;
+      border-radius:var(--radius);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 340px;
+      gap:18px;
+      align-items:start;
+    }
+    .service-list{display:grid;gap:12px}
+    footer{margin-top:28px;padding:18px 0;color:var(--muted);font-size:14px}
+    input, textarea, select{
+      width:100%;
+      padding:10px;
+      border-radius:10px;
+      border:1px solid #e5e7eb;
+      font-size:14px;
+      outline:none;
+      background:#fff;
+    }
+    textarea{min-height:100px;resize:vertical}
+    button.primary{
+      background:var(--accent);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:10px;
+      border:none;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .muted{color:var(--muted)}
+    label{font-size:13px;font-weight:600;margin-top:12px;display:block}
+    .row{display:flex;gap:10px}
+    .half{flex:1}
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr;}
+      nav{display:none}
+    }
+    @media (max-width:520px){.half{flex-basis:100%}}
+    .notice{font-size:13px;color:var(--muted);margin-top:8px}
+    .success{color:green;margin-top:8px}
+    .error{color:#b91c1c;margin-top:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;gap:16px">
+      <div class="brand">
+        <div class="logo">IoT</div>
+        <div>
+          <div style="font-weight:700">Smart E-Waste</div>
+          <div style="font-size:15px;color:var(--muted)">IoT-Based Recycling &amp; Tracking</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Features</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
+        <a href="#sell">Sell</a>
+        <a href="#request" class="cta">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div style="flex:1;min-width:260px">
+        <h1>IoT-Enabled E-Waste Management System</h1>
+        <p>Track, monitor, and optimize e-waste collection using smart bins, GPS tracking, and real-time analytics.</p>
+        <p class="muted" style="margin-top:12px"><li>E-waste management has recently become a critical 
+concern because of the rapid growth of technologies and the 
+short lifespan of electronic peripherals . The inadequate 
+disposal of e-waste can have notable negative impacts on 
+human health and the atmosphere, including releasing
+hazardous substances into the air, water, and soil. Therefore, 
+there is a need for an innovative solution to manage e-waste 
+and promote environmental sustainability . This paper 
+proposes a blockchain-enabled Internet of Things for e-waste
+management along with environmental sustainability through 
+tracking and tracing . 
+Various technologies are utilized to generate, install, and 
+endorse maintainable growing plans in smart cities to satisfy 
+the growing needs of suburbanization . Keen cities strive 
+for ecological sustainability by aiming for energy efficiency 
+and reducing their carbon imprint. The Smart City Index 
+(SCI) assesses many factors, including well-being, 
+transportation, safety or security, and waste control, to 
+enhance the quality of life .
+In the last two eras, electronic apparatus life span has 
+notably decreased because of advancements in technological 
+developments . One of the biggest challenges facing urban 
+areas presently is the management of e-waste. Managing e-waste is more complex compared to traditional waste due to 
+the presence of noxious chemicals, radioactive resources, and 
+storage equipment that could give rise to solitude and safety 
+concerns.</li> In the event that the disposal of storage devices 
+is not handled properly, it could be acquired by adversaries 
+who purchase storage devices as mass and fetch essential data 
+. This method enables them to retrieve sensitive data such 
+as encrypted keys or data, crypto files, communal security 
+records, blueprints of crucial constructions, and even 
+classified government data .
+Consequently, electronic peripherals necessitate a fact oriented approach to monitoring, trailing, disposing of, and 
+reprocessing them. The Internet of Things (IoT) is a vital 
+component of smart cities and can be a group of instrumental 
+in chasing e-waste . Furthermor.</p>
+        <div style="margin-top:12px">
+          <a href="#request" class="primary" style="text-decoration:none;padding:10px 14px;border-radius:8px;display:inline-block">Request Pickup</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="grid">
+        <div>
+          <div class="card">
+            <h3>Key IoT Features</h3>
+            <div class="service-list">
+              <div><strong>Smart Collection Bins</strong><p style="margin:6px 0;color:var(--muted)">Bins with fill-level sensors to notify collection teams automatically.</p></div>
+              <div><strong>Real-Time GPS Tracking</strong><p style="margin:6px 0;color:var(--muted)">Monitor vehicle routes and optimize pickup schedules.</p></div>
+              <div><strong>Data Analytics</strong><p style="margin:6px 0;color:var(--muted)">Analyze waste patterns for better recycling strategies.</p></div>
+              <div><strong>Automated Notifications</strong><p style="margin:6px 0;color:var(--muted)">Alerts for overflow bins, delayed pickups, and equipment issues.</p></div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <h3 id="process">How It Works</h3>
+            <ol style="margin:8px 0 0;color:var(--muted);line-height:1.6">
+              <li>Fill your information in the form</li>
+              <li>Sensor data &amp; user requests go to cloud dashboard</li>
+              <li>Automated route planning and dispatch</li>
+              <li>Secure recycling &amp; material recovery</li>
+            </ol>
+          </div>
+        </div>
+        <aside>
+          <div class="card" id="contact">
+            <h4>Contact Us</h4>
+            <p class="muted">Email:</p>
+            <ul style="list-style:none;padding:0;margin:0">
+              <li><a href="mailto:adityajagtap1069@gmail.com">adityajagtap1069@gmail.com</a></li>
+              <li><a href="mailto:shivrajghongate9@gmail.com">shivrajghongate9@gmail.com</a></li>
+              <li><a href="mailto:prnvmagar@gmail.com">prnvmagar@gmail.com</a></li>
+            </ul>
+            <p style="margin-top:8px" class="muted">Phone:</p>
+            <ul style="list-style:none;padding:0;margin:0">
+              <li>Aditya Jagtap: +91 99759 33939</li>
+              <li>Shivraj Ghongate: +91 98815 65894</li>
+              <li>Pranva Magar: +91 92700 21566</li>
+            </ul>
+            <p style="margin-top:8px"><strong>Office:</strong><br>Main road front of Ganesh Mandir, Saswad, Pune</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sell" style="margin-top:18px">
+      <div class="card">
+        <h3>Sell Your Product</h3>
+        <p class="muted">Have an old or unused electronic item? Sell it here for responsible recycling or reuse.</p>
+        <form id="sellForm">
+          <label for="productName">Product Name</label>
+          <input id="productName" name="productName" type="text" placeholder="Product Name" required>
+
+          <label for="brand">Brand</label>
+          <input id="brand" name="brand" type="text" placeholder="Product Brand" required>
+
+          <label for="condition">Condition</label>
+          <select id="condition" name="condition" required>
+            <option value="">-- Select condition --</option>
+            <option>New</option>
+            <option>Used</option>
+            <option>For parts</option>
+          </select>
+
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" placeholder="Additional details (optional)"></textarea>
+
+          <div style="margin-top:12px">
+            <button type="submit" class="primary">Submit Product</button>
+            <div id="sellFeedback" class="notice" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="request" style="margin-top:18px">
+      <div class="card">
+        <h3>Request Pickup / Inquiry</h3>
+        <form id="requestForm">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Email address" required>
+
+          <label for="pincode">Pin Code</label>
+          <input id="pincode" name="pincode" type="text" placeholder="Your Pin Code" pattern="\d{5,7}" title="Enter a valid pin code" required>
+
+          <label for="address">Address</label>
+          <input id="address" name="address" type="text" placeholder="Your address" required>
+
+          <label for="description">Describe your e-waste management needs</label>
+          <textarea id="description" name="description" placeholder="Describe your e-waste management needs" required></textarea>
+
+          <div style="margin-top:12px">
+            <button type="submit" class="primary">Submit Request</button>
+            <div id="requestFeedback" class="notice" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© 2025 IoT E-Waste Management</div>
+        <div style="color:var(--muted)">Built with IoT innovation ♻️</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Firebase (compat) SDKs used in this demo. Keep as compat if you rely on legacy code. -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script>
+    // ---- IMPORTANT ----
+    // Replace the firebaseConfig below with YOUR project's config values.
+    // Never expose secret server keys in client-side code for production.
+    const firebaseConfig = {
+      apiKey: "AIzaSyBMrigWiE1fb_vmXQNK_0yNyAXLvm2iey4",
+      authDomain: "iot-in-e-wast-managment.firebaseapp.com",
+      projectId: "iot-in-e-wast-managment",
+      storageBucket: "iot-in-e-wast-managment.appspot.com",
+      messagingSenderId: "913142790640",
+      appId: "1:913142790640:web:074df04f950dc886140535",
+      measurementId: "G-X235WVFW3L"
+    };
+
+    // Initialize Firebase app (compat)
+    try {
+      firebase.initializeApp(firebaseConfig);
+    } catch (e) {
+      console.warn('Firebase initializeApp warning:', e);
+    }
+
+    const db = firebase.firestore();
+
+    // Utility: show feedback messages
+    function showFeedback(el, message, type = 'info'){
+      el.textContent = message;
+      el.className = type === 'error' ? 'error' : type === 'success' ? 'success' : 'notice';
+    }
+
+    // Disable/enable a button
+    function setButtonLoading(btn, isLoading){
+      btn.disabled = isLoading;
+      if (isLoading) btn.textContent = 'Submitting...';
+      else btn.textContent = btn.getAttribute('data-original') || 'Submit';
+    }
+
+    // SELL form handler
+    const sellForm = document.getElementById('sellForm');
+    sellForm.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const feedback = document.getElementById('sellFeedback');
+      const btn = sellForm.querySelector('button[type="submit"]');
+      btn.setAttribute('data-original', btn.textContent);
+      setButtonLoading(btn, true);
+      const data = {
+        productName: sellForm.productName.value.trim(),
+        brand: sellForm.brand.value.trim(),
+        condition: sellForm.condition.value,
+        notes: sellForm.notes.value.trim(),
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      };
+      try{
+        await db.collection('products_for_sale').add(data);
+        showFeedback(feedback, 'Product submitted — thank you! We will contact you if needed.', 'success');
+        sellForm.reset();
+      }catch(err){
+        console.error(err);
+        showFeedback(feedback, 'Could not submit product. Please try again later.', 'error');
+      }finally{
+        setButtonLoading(btn, false);
+      }
+    });
+
+    // REQUEST form handler
+    const requestForm = document.getElementById('requestForm');
+    requestForm.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const feedback = document.getElementById('requestFeedback');
+      const btn = requestForm.querySelector('button[type="submit"]');
+      btn.setAttribute('data-original', btn.textContent);
+      setButtonLoading(btn, true);
+
+      const payload = {
+        name: requestForm.name.value.trim(),
+        email: requestForm.email.value.trim(),
+        pincode: requestForm.pincode.value.trim(),
+        address: requestForm.address.value.trim(),
+        description: requestForm.description.value.trim(),
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        status: 'new'
+      };
+
+      try{
+        await db.collection('pickup_requests').add(payload);
+        showFeedback(feedback, 'Request submitted — our team will reach out soon.', 'success');
+        requestForm.reset();
+      }catch(err){
+        console.error(err);
+        showFeedback(feedback, 'Could not submit request. Please try again later.', 'error');
+      }finally{
+        setButtonLoading(btn, false);
+      }
+    });
+
+    // (Optional) Basic client-side enhancement: validate pin code length
+    document.getElementById('pincode').addEventListener('input', function(){
+      const val = this.value.replace(/[^0-9]/g,'');
+      this.value = val.slice(0,6); // limit to 6 digits max
+    });
+
+  </script>
+</body>
+</html>
